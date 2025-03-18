@@ -28,11 +28,11 @@ class PermanentEmployee extends Employee {
 
     public double calculateTax() {
         if (salary <= 50000) {
-            return salary * 0.1; // 10% tax
+            return salary * 0.1; 
         } else if (salary <= 100000) {
-            return salary * 0.2; // 20% tax
+            return salary * 0.2; 
         } else {
-            return salary * 0.3; // 30% tax
+            return salary * 0.3; 
         }
     }
 
