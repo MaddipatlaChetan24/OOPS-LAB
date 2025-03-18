@@ -21,7 +21,7 @@ class SavingsAccount extends BankAccount {
     }
 
     public double calculateInterest() {
-        return balance * (interestRate / 100); // Interest = Principal * Rate
+        return balance * (interestRate / 100); 
     }
 
    
@@ -32,7 +32,7 @@ class SavingsAccount extends BankAccount {
 }
 
 class FixedDepositAccount extends SavingsAccount {
-    int tenure; // in years
+    int tenure; 
 
     public FixedDepositAccount(String accountHolder, double balance, double interestRate, int tenure) {
         super(accountHolder, balance, interestRate);
@@ -40,7 +40,7 @@ class FixedDepositAccount extends SavingsAccount {
     }
 
     public double calculateMaturityAmount() {
-        return balance + (calculateInterest() * tenure); // Maturity amount = principal + interest over years
+        return balance + (calculateInterest() * tenure); 
     }
 
   
