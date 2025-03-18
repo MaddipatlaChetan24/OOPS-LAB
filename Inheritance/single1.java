@@ -1,31 +1,53 @@
-class Person:
-    def __init__(self, name, age, address):
-        self.name = name
-        self.age = age
-        self.address = address
+class Person {
+    String name;
+    int age;
+    String address;
 
-    def display_info(self):
-        return f"Name: {self.name}, Age: {self.age}, Address: {self.address}"
+    public Person(String name, int age, String address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
 
-class Student extends Person:
-    def __init__(self, name, age, address, student_id, grades):
-        super().__init__(name, age, address)
-        self.student_id = student_id
-        self.grades = grades  # Dictionary of course grades
+    public String displayInfo() {
+        return "Name: " + name + ", Age: " + age + ", Address: " + address;
+    }
+}
 
-    def calculate_gpa(self):
-        total_points = 0
-        for grade in self.grades.values():
-            if grade == 'A': total_points += 4
-            elif grade == 'B': total_points += 3
-            elif grade == 'C': total_points += 2
-            elif grade == 'D': total_points += 1
-        return total_points / len(self.grades)
+class Student extends Person {
+    String studentId;
+    String[] grades;
 
-    def display_info(self):
-        person_info = super().display_info()
-        return f"{person_info}, Student ID: {self.student_id}, GPA: {self.calculate_gpa()}"
+    public Student(String name, int age, String address, String studentId, String[] grades) {
+        super(name, age, address);
+        this.studentId = studentId;
+        this.grades = grades;
+    }
 
+    public double calculateGPA() {
+        int totalPoints = 0;
+        for (String grade : grades) {
+            switch (grade) {
+                case "A": totalPoints += 4; break;
+                case "B": totalPoints += 3; break;
+                case "C": totalPoints += 2; break;
+                case "D": totalPoints += 1; break;
+            }
+        }
+        return totalPoints / (double) grades.length;
+    }
 
-student = Student("John Doe", 21, "1234 Elm St", "S1001", {"Math": "A", "Science": "B", "History": "A"})
-print(student.display_info())
+  
+    public String displayInfo() {
+        return super.displayInfo() + ", Student ID: " + studentId + ", GPA: " + calculateGPA();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        String[] grades = {"A", "B", "A"};
+        Student student = new Student("John Doe", 21, "1234 Elm St", "S1001", grades);
+        System.out.println(student.displayInfo());
+    }
+}
+
