@@ -4,40 +4,7 @@ A comprehensive Java Object-Oriented Programming laboratory repository containin
 
 ---
 
-## Overview
 
-This repository was created as part of the Object-Oriented Programming Laboratory coursework.
-
-It contains Java programs covering fundamental OOP concepts along with UML diagrams and package implementations used during laboratory sessions.
-
-The repository is useful for:
-
-- B.Tech Computer Science students
-- OOP laboratory practice
-- Java programming beginners
-- Interview preparation
-- Semester exam revision
-
----
-
-## Topics Covered
-
-### Core OOP Concepts
-
-- Abstraction
-- Encapsulation
-- Inheritance
-- Polymorphism
-
-### Packages
-
-- Built-in Packages
-- User-defined Packages
-
-### Exception Handling
-
-- Try-Catch
-- Throws
 - Custom Exception Handling
 
 ### File Handling
